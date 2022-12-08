@@ -8,7 +8,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
         <li class="nav-item">
-            <a class="nav-link " href="Client/Index">
+            <a class="nav-link " asp-controller="Home" asp-action="Dashboard">
                 <i class="bi bi-grid"></i>
                 <span>Dashboard</span>
             </a>
@@ -17,41 +17,45 @@
         <li class="nav-heading">Status</li>
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="">
+            <a class="nav-link collapsed" asp-controller="Pizzas" asp-action="Index">
                 <i class="bi bi-person"></i>
-                <span>Pending Appointments</span>
+                <span>Pizzas</span>
             </a>
         </li><!-- End Profile Page Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="">
+            <a class="nav-link collapsed" asp-controller="Categories" asp-action="Index">
                 <i class="bi bi-question-circle"></i>
-                <span>Approved Appointments</span>
+                <span>Categories</span>
             </a>
         </li><!-- End F.A.Q Page Nav -->
 
         <li class="nav-heading">Manage</li>
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="~/Service/Index">
+            <a class="nav-link collapsed" asp-controller="Ingredients" asp-action="Index">
                 <i class="bi bi-envelope"></i>
-                <span>Services</span>
+                <span>Ingredients</span>
             </a>
         </li><!-- End Contact Page Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="">
+            <a class="nav-link collapsed" asp-controller="PizzaIngredients" asp-action="Index">
                 <i class="bi bi-card-list"></i>
-                <span>Promos</span>
+                <span>Pizza Ingredients</span>
             </a>
         </li><!-- End Register Page Nav -->
 
         <li class="nav-heading">Reports</li>
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="pages-login.html">
+            <a class="nav-link collapsed" asp-controller="Reviews" asp-action="Index">
                 <i class="bi bi-box-arrow-in-right"></i>
-                <span>Appointment History</span>
+                <span>Reviews</span>
+            </a>
+            <a class="nav-link collapsed" asp-controller="Orders" asp-action="Index">
+                <i class="bi bi-box-arrow-in-right"></i>
+                <span>Orders</span>
             </a>
         </li><!-- End Login Page Nav -->
 

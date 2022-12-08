@@ -3,6 +3,7 @@
 @{
     var ModelName = "Ingredients";
     ViewData["Title"] = ModelName;
+    Layout = "_Layout1";
 }
 
 <h2>@ModelName</h2>
@@ -10,7 +11,7 @@
 <p>
     <a asp-action="Create" class="btn btn-success">Create New</a>
 </p>
-<table class="table">
+<table class="table table-hover table-bordered">
     <thead>
         <tr>
                 <th>
@@ -26,9 +27,12 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <div class="btn-group">
+                <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.Id">Edit</a> 
+                <a class="btn btn-warning" asp-action="Details" asp-route-id="@item.Id">Details</a> 
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </div>
+                
             </td>
         </tr>
 }
