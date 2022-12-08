@@ -1,0 +1,114 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Identity.EntityFrameworkCore
+
+@inject SignInManager<IdentityUser> SignInManager
+
+@if (User.IsInRole("Admin"))
+{
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+        <li class="nav-item">
+            <a class="nav-link " href="Client/Index">
+                <i class="bi bi-grid"></i>
+                <span>Dashboard</span>
+            </a>
+        </li><!-- End Dashboard Nav -->
+
+        <li class="nav-heading">Status</li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="">
+                <i class="bi bi-person"></i>
+                <span>Pending Appointments</span>
+            </a>
+        </li><!-- End Profile Page Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="">
+                <i class="bi bi-question-circle"></i>
+                <span>Approved Appointments</span>
+            </a>
+        </li><!-- End F.A.Q Page Nav -->
+
+        <li class="nav-heading">Manage</li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="~/Service/Index">
+                <i class="bi bi-envelope"></i>
+                <span>Services</span>
+            </a>
+        </li><!-- End Contact Page Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="">
+                <i class="bi bi-card-list"></i>
+                <span>Promos</span>
+            </a>
+        </li><!-- End Register Page Nav -->
+
+        <li class="nav-heading">Reports</li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="pages-login.html">
+                <i class="bi bi-box-arrow-in-right"></i>
+                <span>Appointment History</span>
+            </a>
+        </li><!-- End Login Page Nav -->
+
+
+
+    </ul>
+}
+else if (SignInManager.IsSignedIn(User))
+{
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+        <li class="nav-item">
+            <a class="nav-link " href="Client/Index">
+                <i class="bi bi-grid"></i>
+                <span>Dashboard</span>
+            </a>
+        </li><!-- End Dashboard Nav -->
+
+        <li class="nav-heading">Process</li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" asp-controller="Pizzas" asp-action="ListAll">
+                <i class="bi bi-person"></i>
+                <span>Pizzas</span>
+            </a>
+        </li><!-- End Profile Page Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="">
+                <i class="bi bi-question-circle"></i>
+                <span>Category</span>
+            </a>
+        </li><!-- End F.A.Q Page Nav -->
+
+        <li class="nav-heading">Status</li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" asp-controller="Reviews" asp-action="Index">
+                <i class="bi bi-envelope"></i>
+                <span>Add Reviews</span>
+            </a>
+        </li><!-- End Contact Page Nav -->
+
+        
+
+        <li class="nav-heading">Reports</li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" asp-controller="Orders" asp-action="Index">
+                <i class="bi bi-box-arrow-in-right"></i>
+                <span>Orders</span>
+            </a>
+        </li><!-- End Login Page Nav -->
+
+
+
+    </ul>
+    
+
+}

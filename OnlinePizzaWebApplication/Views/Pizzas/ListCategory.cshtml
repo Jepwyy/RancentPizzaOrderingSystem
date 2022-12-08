@@ -1,0 +1,18 @@
+@model IEnumerable<Pizzas>
+
+@{
+    var pageName = ViewBag.CurrentCategory;
+    ViewData["Title"] = pageName;
+    Layout = "_Layout1";
+}
+
+<h2>@pageName</h2>
+<hr />
+<div class="row">
+    @foreach (var pizza in Model)
+    {
+        @Html.Partial("PizzaSummary", pizza)
+    }
+</div>
+
+<br />

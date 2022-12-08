@@ -1,0 +1,23 @@
+@model Pizzas
+
+    
+
+	<div class="col-sm-2 col-lg-4 col-md-4">
+	<div class="card" style="width: 18rem; ">
+			<img src="@Model.ImageUrl" alt="Picture of @Model.Name" class="card-img-top">
+			<div class="card-body">
+				<h3 class="pull-right">@Model.Price.ToString("c")</h3>
+				<h3 style="color: #333;">
+					<a asp-controller="Pizzas" asp-action="DisplayDetails" asp-route-id="@Model.Id">@Model.Name</a>
+				</h3>
+				<h5><b>Category: @Model.Category.Name</b></h5>
+				<p>@Model.Description</p>
+
+				<p class="button">
+					<a class="btn btn-primary" asp-controller="ShoppingCart" asp-action="AddToShoppingCart"
+					   asp-route-pizzaId="@Model.Id">Add Pizza</a>
+				</p>
+			</div>
+		</div>
+	</div>
+

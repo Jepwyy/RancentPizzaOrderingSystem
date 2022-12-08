@@ -1,0 +1,83 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Identity.EntityFrameworkCore
+
+@inject SignInManager<IdentityUser> SignInManager
+
+@if (User.IsInRole("Admin"))
+{
+    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+        
+        <span class="d-none d-md-block dropdown-toggle ps-2">Hello! @User.Identity.Name!</span>
+    </a><!-- End Profile Iamge Icon -->
+
+    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+        <li class="dropdown-header">
+            <h6>@User.Identity.Name</h6>
+            <span>Admin Account</span>
+        </li>
+        <li>
+            <hr class="dropdown-divider">
+        </li>
+
+        <li>
+            <a class="dropdown-item d-flex align-items-center" asp-area="Identity" asp-page="/Account/Manage/Index">
+                <i class="bi bi-gear"></i>
+                <span>Account Settings</span>
+            </a>
+        </li>
+        <li>
+            <hr class="dropdown-divider">
+        </li>
+
+        <li>
+            <a class="dropdown-item d-flex align-items-center"
+               data-bs-toggle="modal"
+               data-bs-target="#basicModal">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+            </a>
+        </li>
+        <!-- Modal -->
+
+
+    </ul><!-- End Profile Dropdown Items -->
+}
+else if (SignInManager.IsSignedIn(User))
+{
+    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+        
+        <span class="d-none d-md-block dropdown-toggle ps-2">Hello! @User.Identity.Name!</span>
+    </a><!-- End Profile Iamge Icon -->
+
+    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+        <li class="dropdown-header">
+            <h6>@User.Identity.Name</h6>
+            <span>Client Account</span>
+        </li>
+        <li>
+            <hr class="dropdown-divider">
+        </li>
+
+        <li>
+            <a class="dropdown-item d-flex align-items-center" asp-area="Identity" asp-page="/Account/Manage/Index">
+                <i class="bi bi-gear"></i>
+                <span>Account Settings</span>
+            </a>
+        </li>
+        <li>
+            <hr class="dropdown-divider">
+        </li>
+
+        <li>
+            <a class="dropdown-item d-flex align-items-center"
+               data-bs-toggle="modal"
+               data-bs-target="#basicModal">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+            </a>
+        </li>
+        <!-- Modal -->
+
+
+    </ul><!-- End Profile Dropdown Items -->
+}
