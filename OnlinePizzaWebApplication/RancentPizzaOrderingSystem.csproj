@@ -50,6 +50,14 @@
     <Folder Include="Views\Shared\Components\CarouselMenu\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="wwwroot\assets\assets\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\assets\assets\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\assets\assets\js\bootstrap.min.js" />
+    <None Include="wwwroot\assets\assets\js\counter.js" />
+    <None Include="wwwroot\assets\assets\js\jquery-3.3.1.min.js" />
+    <None Include="wwwroot\assets\assets\js\jquery.magnific-popup.min.js" />
+    <None Include="wwwroot\assets\assets\js\lightbox-plus-jquery.min.js" />
+    <None Include="wwwroot\assets\assets\js\owl.carousel.js" />
     <None Include="wwwroot\assets\img\not-found.svg" />
     <None Include="wwwroot\assets\js\main.js" />
     <None Include="wwwroot\assets\vendor\apexcharts\apexcharts.min.js" />

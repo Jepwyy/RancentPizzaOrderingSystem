@@ -3,6 +3,7 @@
 @{
     var pageName = "Details";
     ViewData["Title"] = pageName;
+    Layout = "_Layout1";
 }
 
 <h2>@pageName</h2>
@@ -84,10 +85,10 @@
             @Html.DisplayFor(model => model.User.Email)
         </dd>
         <dt>
-            <br />----- Order
+            <br />----- Order Details -----
         </dt>
         <dd>
-            <br /><b>Details -----</b>
+            <br /><b></b>
         </dd>
         @{decimal subtotal = 0M;}
         @foreach (OrderDetail orderDetail in ViewBag.OrderDetailsList)

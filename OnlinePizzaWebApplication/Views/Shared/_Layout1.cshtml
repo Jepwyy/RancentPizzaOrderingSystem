@@ -82,7 +82,9 @@
                     </a>
                 </li><!-- End Search Icon-->
 
-
+                <li class="nav-item dropdown">
+                    @await Component.InvokeAsync("ShoppingCartSummary")
+                </li>
 
                 <li class="nav-item dropdown pe-3">
                     @await Html.PartialAsync("_ProfilePartial")
@@ -138,7 +140,7 @@
 
     <footer id="footer" class="footer">
         <div class="copyright">
-            &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+            &copy; Copyright <strong><span>SBIT-3J</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
             <!-- All the links in the footer should remain intact. -->
@@ -163,6 +165,7 @@
 
     <!-- Template Main JS File -->
     <script src="~/assets/js/main.js"></script>
+    @RenderSection("Scripts", required: false)
 
 </body>
 
