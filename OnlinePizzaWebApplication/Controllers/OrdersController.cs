@@ -58,12 +58,16 @@ namespace RancentPizzaOrderingSystem.Controllers
                 await _orderRepository.CreateOrderAsync(order);
                 await _shoppingCart.ClearCartAsync();
 
-                return RedirectToAction("CheckoutComplete");
+                return RedirectToAction("Pay");
             }
 
             return View(order);
         }
-
+        [Authorize]
+        public IActionResult Pay()
+        {
+            return View();
+        }
         [Authorize]
         public IActionResult CheckoutComplete()
         {

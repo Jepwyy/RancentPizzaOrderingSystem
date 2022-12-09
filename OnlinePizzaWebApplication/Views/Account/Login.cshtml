@@ -46,7 +46,7 @@
 	<div class="limiter">
 		
 		<div class="container-login100">
-			<a asp-controller="Home" asp-action="LandingPage" class="btn btn-info">Back</a>
+			<a asp-controller="Home" asp-action="LandingPage" class="btn btn-info align-baseline">Back</a>
 			<div class="wrap-login100">
 				<form asp-controller="Account" asp-action="Login" method="post" role="form"  class="login100-form validate-form">
 					<span class="login100-form-title p-b-22">
@@ -86,7 +86,7 @@
 							Don’t have an account?
 						</span>
 
-						<a class="txt2" href="#">
+						<a class="txt2" asp-controller="Account" asp-action="Register">
 							Sign Up
 						</a>
 					</div>
