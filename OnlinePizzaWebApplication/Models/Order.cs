@@ -74,6 +74,11 @@ namespace RancentPizzaOrderingSystem.Models
         [DisplayName("Order Date")]
         public DateTime OrderPlaced { get; set; }
 
+        [Required]
+        [StringLength(50)]
+        [DisplayName("Status")]
+        public string Status { get; set; } = "Pending";
+
         //[BindNever]
         //[ScaffoldColumn(false)]
         //public string OrderStatus { get; set; }
