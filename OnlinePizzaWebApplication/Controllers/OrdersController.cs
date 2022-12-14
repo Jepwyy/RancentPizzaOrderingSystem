@@ -94,6 +94,26 @@ namespace RancentPizzaOrderingSystem.Controllers
                 return View(orders);
             }
         }
+        [Authorize]
+        public async Task<IActionResult> PendingOrders()
+        {
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+            bool isAdmin = await _userManager.IsInRoleAsync(user, "Admin");
+            
+
+            if (isAdmin)
+            {
+                var allOrders = await _context.Orders.Include(o => o.OrderLines).Include(o => o.User).Where(s => s.Status == "Pending").ToListAsync();
+                return View(allOrders);
+            }
+            else
+            {
+                var orders = await _context.Orders.Include(o => o.OrderLines).Include(o => o.User)
+                    .Where(r => r.User == user).Where(s => s.Status == "Pending").ToListAsync();
+                return View(orders);
+            }
+        }
+
 
         // GET: Orders/Details/5
         [Authorize]
@@ -200,7 +220,7 @@ namespace RancentPizzaOrderingSystem.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Approve(int id, [Bind("Status")] Order order)
+        public async Task<IActionResult> Approve(int id, [Bind("OrderId,FirstName,LastName,AddressLine1,AddressLine2,ZipCode,City,State,Country,PhoneNumber,Email,Status")] Order order)
         {
             if (id != order.OrderId)
             {
