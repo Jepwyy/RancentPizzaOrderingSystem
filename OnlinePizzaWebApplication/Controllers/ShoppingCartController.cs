@@ -7,6 +7,7 @@ using RancentPizzaOrderingSystem.Repositories;
 using RancentPizzaOrderingSystem.Models;
 using RancentPizzaOrderingSystem.ViewModels;
 using RancentPizzaOrderingSystem.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace RancentPizzaOrderingSystem.Controllers
 {
@@ -23,7 +24,7 @@ namespace RancentPizzaOrderingSystem.Controllers
             _shoppingCart = shoppingCart;
             _context = context;
         }
-
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             var items = await _shoppingCart.GetShoppingCartItemsAsync();

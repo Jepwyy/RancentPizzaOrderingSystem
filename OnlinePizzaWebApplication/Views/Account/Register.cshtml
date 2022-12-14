@@ -13,11 +13,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V2</title>
+	<title>Register</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="~/vendor1/images/icons/favicon.ico"/>
+	<link href="~/assets/assets/images/pilogo-removebg-preview.png" rel="icon">
+	<link href="~/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="~/vendor1/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -40,6 +41,19 @@
 	<style>
 		.wrap-login100 {
 			background: #fff0f0;
+			width: 390px;
+			border-radius: 10px;
+			overflow: hidden;
+			padding: 67px 55px 33px 55px;
+			box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+			-moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+			-webkit-box-shadow: 0 3px 15px 0px rgba(249 249 249);
+			-o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+			-ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+		}
+
+		.container-login100 {
+			background: url(/images/bgpizza1.jpg) no-repeat;
 		}
 	</style>
 	<!--===============================================================================================-->
@@ -49,8 +63,9 @@
 	<div class="limiter">
 		
 		<div class="container-login100">
-			<a asp-controller="Home" asp-action="LandingPage" class="btn btn-info align-baseline">Back</a>
+			
 			<div class="wrap-login100">
+				<a asp-controller="Home" asp-action="LandingPage" class="btn btn-outline-danger align-baseline justify-content-start">Back</a>
 				<form asp-controller="Account" asp-action="Register" method="post"  role="form" class="login100-form validate-form">
 					<span class="login100-form-title p-b-22">
 						Register
@@ -92,7 +107,7 @@
 						</div>
 					</div>
 
-					<div class="text-center p-t-55">
+					<div class="text-center p-t-35">
 						<span class="txt1">
 							Already have an account?
 						</span>

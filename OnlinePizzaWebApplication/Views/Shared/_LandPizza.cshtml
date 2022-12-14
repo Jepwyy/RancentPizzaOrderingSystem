@@ -1,0 +1,18 @@
+﻿@model Pizzas
+
+
+
+
+<div class="item">
+    <div class="d-grid food-info">
+        <div class="column">
+            <h4 class="name-pos"><a href="#url">@Model.Name</a></h4>
+            <p>@Model.Description </p>
+            <h6>Category: @Model.Category.Name</h6>
+            <h5>@Model.Price.ToString("c")</h5>
+            <a asp-controller="ShoppingCart" asp-action="AddToShoppingCart"
+               asp-route-pizzaId="@Model.Id" class="btn-style btn-primary btn mt-4">Order Online</a>
+            <a href="#url"><img src="@Model.ImageUrl" alt="" class="img-fluid radius-image mt-4" /></a>
+        </div>
+    </div>
+</div>

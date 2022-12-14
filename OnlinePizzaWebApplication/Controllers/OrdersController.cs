@@ -207,7 +207,8 @@ namespace RancentPizzaOrderingSystem.Controllers
                 return NotFound();
             }
 
-            var order = await _context.Orders.SingleOrDefaultAsync(m => m.OrderId == id);
+            var order = await _context.Orders.Include(o => o.OrderLines).Include(o => o.User)
+               .SingleOrDefaultAsync(m => m.OrderId == id);
             if (order == null)
             {
                 return NotFound();
@@ -220,13 +221,13 @@ namespace RancentPizzaOrderingSystem.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Approve(int id, [Bind("OrderId,FirstName,LastName,AddressLine1,AddressLine2,ZipCode,City,State,Country,PhoneNumber,Email,Status")] Order order)
+        public async Task<IActionResult> Approve(int id, Order order)
         {
             if (id != order.OrderId)
             {
                 return NotFound();
             }
-
+            
             if (ModelState.IsValid)
             {
                 try
@@ -279,6 +280,10 @@ namespace RancentPizzaOrderingSystem.Controllers
             await _context.SaveChangesAsync();
 
             return RedirectToAction("Index");
+        }
+        private bool OrderExists(int id)
+        {
+            return _context.Orders.Any(e => e.OrderId == id);
         }
 
     }

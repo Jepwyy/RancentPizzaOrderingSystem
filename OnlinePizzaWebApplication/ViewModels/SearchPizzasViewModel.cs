@@ -17,6 +17,6 @@ namespace RancentPizzaOrderingSystem.ViewModels
         //public IEnumerable<string> SearchListExamples { get; set; }
 
         public IEnumerable<Pizzas> PizzaList { get; set; }
-
+        public IEnumerable<Reviews> ReviewList { get; set; }
     }
 }

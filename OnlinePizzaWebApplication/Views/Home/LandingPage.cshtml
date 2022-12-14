@@ -1,6 +1,7 @@
 ﻿@{
 	Layout = null;
 }
+@model SearchPizzasViewModel
 <!--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -9,6 +10,8 @@ Author URL: http://w3layouts.com
 <html lang="en">
 
 <head>
+    <link href="~/assets/assets/images/pilogo-removebg-preview.png" rel="icon">
+    <link href="~/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -40,7 +43,7 @@ Author URL: http://w3layouts.com
           aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
           <span class="navbar-toggler-icon fa icon-close fa-times"></span>
-          </span>
+          
         </button>
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
@@ -58,7 +61,7 @@ Author URL: http://w3layouts.com
               <a class="nav-link effect-3" href="#contact">Contact</a>
             </li>
             <li class="px-4 fill-none">
-              <a asp-controller="Account" asp-action="Login" class="btn btn-style btn-secondary">Online Order</a>
+                                <a asp-controller="Account" asp-action="Login" class="btn btn-style btn-secondary">Login</a>
               </li>
           </ul>
           <div class="popup">
@@ -138,7 +141,7 @@ Author URL: http://w3layouts.com
                 <div class="col-lg-7 section-width align-self">
                     <h5>Eat pizza everyday</h5>
                     <h2>Share your love for pizza</h2>
-                        <a data-toggle="modal" data-target="#exampleModal" class="btn btn-secondary btn-outline-style mt-md-5 mt-4">
+                        <a asp-controller="Pizzas" asp-action="ListAll" class="btn btn-secondary btn-outline-style mt-md-5 mt-4">
                         <span class="fa fa-shopping-cart mr-2"></span> Order Online</a>
                 </div>
 
@@ -151,49 +154,9 @@ Author URL: http://w3layouts.com
                 </div>
             </div>
         </div>
+        </div>
 
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <form asp-controller="Account" asp-action="Login" method="post" class="form-horizontal" role="form">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            @await Html.PartialAsync("_AccountLogPartial")
-                            <a data-toggle="modal" data-target="#exampleModal2">Register</a>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary" value="Log in" >Login</button>
-                        </div>
-                    </div>
-                    </form>
-                    
-                </div>
-            </div>
-            <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            ...
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
 </section>
     
 <!-- iphone home block -->
@@ -241,61 +204,12 @@ Author URL: http://w3layouts.com
             </div>
             <div class="foods1-content mt-lg-5 mt-4 mb-sm-0 mb-4">
                 <div class="owl-carousel owl-theme text-center">
-                    <div class="item">
-                        <div class="d-grid food-info">
-                            <div class="column">
-                                <h4 class="name-pos"><a href="#url">Hawaii</a></h4>
-                                <p>Tomato sauce, mozzarella, & oregano</p>
-                                <h5>₱75</h5>
-                                <a href="#url" class="btn-style btn-primary btn mt-4">Order Online</a>
-                                    <a href="#url"><img src="~/assets/assets/images/p1.jpg" alt="" class="img-fluid radius-image mt-4" /></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="d-grid food-info">
-                            <div class="column">
-                                <h4 class="name-pos"><a href="#url">Ham and Cheese</a></h4>
-                                <p>Tomato sauce, Ham, and Cheese</p>
-                                <h5>₱80</h5>
-                                <a href="#url" class="btn-style btn-primary btn mt-4">Order Online</a>
-                                <a href="#url"><img src="~/assets/assets/images/p2.jpg" alt="" class="img-fluid radius-image mt-4"/></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="d-grid food-info">
-                            <div class="column">
-                                <h4 class="name-pos"><a href="#url">Pepperoni</a></h4>
-                                <p> Tomato sauce,  Bell Pepper, and Pepperoni</p>
-                                <h5>₱80</h5>
-                                <a href="#url" class="btn-style btn-primary btn mt-4">Order Online</a>
-                                    <a href="#url"><img src="~/assets/assets/images/p3.jpg" alt="" class="img-fluid radius-image mt-4" /></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="d-grid food-info">
-                            <div class="column">
-                                <h4 class="name-pos"><a href="#url">Bacon</a></h4>
-                                <p>Tomato sauce, Bacon, and Bell Pepper</p>
-                                <h5>₱89</h5>
-                                <a href="#url" class="btn-style btn-primary btn mt-4">Order Online</a>
-                                <a href="#url"><img src="~/assets/assets/images/p4.jpg" alt="" class="img-fluid radius-image mt-4"/></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="d-grid food-info">
-                            <div class="column">
-                                <h4 class="name-pos"><a href="#url">Vegetarian</a></h4>
-                                <p>Tomato sauce,  Bell Pepper,  and Mushroom</p>
-                                <h5>₱99</h5>
-                                <a href="#url" class="btn-style btn-primary btn mt-4">Order Online</a>
-                                <a href="#url"><img src="~/assets/assets/images/p5.jpg" alt="" class="img-fluid radius-image mt-4"/></a>
-                            </div>
-                        </div>
-                    </div>
+
+                        @foreach (var pizza in Model.PizzaList)
+                        {
+                            @Html.Partial("_LandPizza", pizza)
+                        }
+                       
                 </div>
             </div>
         </div>
@@ -454,6 +368,7 @@ Author URL: http://w3layouts.com
               </div>
             </div>
           </div>
+          </div>
       </section>
   <!-- footers 20 -->
   <section class="w3l-footers-20">
@@ -536,7 +451,7 @@ Author URL: http://w3layouts.com
   	}
   </script>
   <!-- /move top -->
-  </section>
+
 
   <!-- jQuery and Bootstrap JS -->
     <script src="~/assets/assets/js/jquery-3.3.1.min.js"></script>

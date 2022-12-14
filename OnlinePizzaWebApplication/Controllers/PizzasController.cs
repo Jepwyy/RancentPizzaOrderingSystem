@@ -35,7 +35,7 @@ namespace RancentPizzaOrderingSystem.Controllers
         }
 
         // GET: Pizzas
-        [AllowAnonymous]
+        [Authorize]
         public async Task<IActionResult> ListAll()
         {
             var model = new SearchPizzasViewModel()
