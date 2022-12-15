@@ -14,7 +14,7 @@ using RancentPizzaOrderingSystem.Data;
 
 namespace RancentPizzaOrderingSystem.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize]
     public class PizzasController : Controller
     {
         private readonly AppDbContext _context;
@@ -35,7 +35,7 @@ namespace RancentPizzaOrderingSystem.Controllers
         }
 
         // GET: Pizzas
-        [Authorize]
+        
         public async Task<IActionResult> ListAll()
         {
             var model = new SearchPizzasViewModel()
