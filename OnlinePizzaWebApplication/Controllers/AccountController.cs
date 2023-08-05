@@ -45,7 +45,7 @@ namespace RancentPizzaOrderingSystem.Controllers
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("Dashboard", "Home");
+                    return RedirectToAction("Success", "Account");
                 }
                 else
                 {
@@ -54,6 +54,7 @@ namespace RancentPizzaOrderingSystem.Controllers
             }
             return View(model);
         }
+        
 
         [AllowAnonymous]
         public IActionResult Login(string returnUrl)
@@ -103,6 +104,9 @@ namespace RancentPizzaOrderingSystem.Controllers
         {
             return View();
         }
-
+        public IActionResult Success()
+        {
+            return View();
+        }
     }
 }
